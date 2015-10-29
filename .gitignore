@@ -1,0 +1,4 @@
+builds/
+.vagrant/
+packer_cache/
+output-*/
