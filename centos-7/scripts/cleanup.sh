@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Clean up activities
 set -ux
 

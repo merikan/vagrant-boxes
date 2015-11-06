@@ -1,6 +1,9 @@
-# Puppet activities
-set -eux
+#!/usr/bin/env bash
 
+# Puppet activities
+set -ux
+
+echo "Installing Puppet"
 cat > /etc/yum.repos.d/puppetlabs.repo << EOF
 [puppetlabs-dependencies]
 name=puppetlabdsdependencies
@@ -16,3 +19,4 @@ gpgcheck=0
 EOF
 
 yum -y install puppet facter ruby-shadow
+echo "Puppet $(puppet --version)" | tee -a /tmp/packer_info

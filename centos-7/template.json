@@ -5,7 +5,7 @@
   },
   "builders": [
     {
-      "name": "centos-7-x86_64-desktop-vbox-puppet-{{user `build_version`}}",
+      "name": "centos-7-x86_64-desktop-vbox-puppet-devtools-{{user `build_version`}}",
       "type": "virtualbox-iso",
       "guest_os_type": "RedHat_64",
       "iso_url": "http://mirror.nsc.liu.se/CentOS/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso",
@@ -23,7 +23,8 @@
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "480"],
         ["modifyvm", "{{.Name}}", "--cpus", "1"]
-      ]
+      ],
+      "virtualbox_version_file": ".vbox_version"
     }
   ],
   "provisioners": [
@@ -33,7 +34,9 @@
         "scripts/base.sh",
         "scripts/puppet.sh",
         "scripts/vagrant.sh",
-        "scripts/vm-tools.sh",
+        "scripts/virtualbox.sh",
+        "scripts/dev-tools.sh",
+        "scripts/info.sh",
         "scripts/cleanup.sh",
         "scripts/zerodisk.sh"
       ]

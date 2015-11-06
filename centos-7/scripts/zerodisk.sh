@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Zero disk activities
 set -ux
 

@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 # Vagrant activities
-set -eux
+set -ux
 
 date > /etc/vagrant_box_build_time
 
@@ -18,4 +20,4 @@ chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant /home/vagrant/.ssh
 
 # Customize the message of the day
-echo 'Welcome to your Vagrant-built virtual machine.' > /etc/motd
+# echo 'Welcome to your Vagrant-built virtual machine.' > /etc/motd
