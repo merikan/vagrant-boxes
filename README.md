@@ -10,6 +10,7 @@ The naming convention for a box and its Packer template is a important.
 ## Usage
 
 To be able to build Vagrant boxes from this repo you need the following software:
+
 1.  VirtualBox - http://www.virtualbox.org/
 1.  Vagrant - http://www.vagrantup.com/
 1.  Packer - http://www.packer.io
@@ -20,20 +21,24 @@ cd centos-7
 ./build.sh ./centos-7-x86_64-vbox-puppet.json
 ```
 
-When the build is done you probably want to test it in Vagrant.
-1.  Import the Vagrant box.
+When the build is done you probably want to test it in Vagrant.  
+
+1.  Import the Vagrant box.  
     ```sh
     vagrant box add builds/centos-7-x86_64-vbox-puppet-v20151106.box  --name centos-7-x86_64-vbox-puppet --force
     ```
-1.  Create a Vagrant project.
+
+1.  Create a Vagrant project.  
     ```sh
     vagrant init centos-7-x86_64-vbox-puppet
     ```
-1.  Boot up the Vagrant box.
+
+1.  Boot up the Vagrant box.  
     ```sh
     vagrant up
     ```
-1.  Login and inspect the box
+
+1.  Login and inspect the box  
     ```sh
     vagrant ssh
     ```
